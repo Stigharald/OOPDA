@@ -68,6 +68,10 @@
             // 
             this.TimerSample.Tick += new System.EventHandler(this.TimerSample_Tick);
             // 
+            // TimerLogging
+            // 
+            this.TimerLogging.Tick += new System.EventHandler(this.TimerLogging_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

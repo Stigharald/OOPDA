@@ -14,7 +14,7 @@ namespace Assignment1
     public partial class Form1 : Form
     {
         List<Sensor> Sensors; // just a list of virtual analog and digital sensors
-
+        CSVfile Logfile; //lage loggefil objekt
 
         // Values given in assignment
         int AnalogSensors = 6; 
@@ -40,6 +40,9 @@ namespace Assignment1
             //initializing the tick intevall of the timers.
             TimerSample.Interval = Convert.ToInt16((Sampingtime*1000));
             TimerLogging.Interval = Convert.ToInt16((LoggingTime * 1000));
+
+            //instansier loggefil objekt
+            Logfile = new CSVfile("LoggeFil", Sensors);  //this makes and loggs and makes a header for the loggfile.
 
         }
 
@@ -70,7 +73,9 @@ namespace Assignment1
                 TextBox.Text = Data;
 
                 Sampleable = false;
-                TimerLogging.Enabled = true;
+                TimerSample.Enabled = true;
+                //TimerLogging.Enabled = true;
+                btnSample.Hide();
             }
 
         }
@@ -82,7 +87,11 @@ namespace Assignment1
 
         private void btnLog_Click(object sender, EventArgs e)
         {
-            if (Logging) { Logging = false; }
+            if (Logging)
+            {
+                Logging = false;
+                TimerLogging.Enabled = false;
+            }
             else {
                 Logging = true;
                 TimerLogging.Enabled = true;
@@ -93,6 +102,16 @@ namespace Assignment1
         {
             Sampleable = true;
             TimerSample.Enabled = false;
+            btnSample.Visible = true;
+           
+        }
+
+        private void TimerLogging_Tick(object sender, EventArgs e)
+        {
+            if (Logging)
+            {
+                Logfile.WriteToCSV(Sensors);
+            }
         }
 
 
