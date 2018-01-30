@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSample = new System.Windows.Forms.Button();
             this.btnLog = new System.Windows.Forms.Button();
             this.TextBox = new System.Windows.Forms.RichTextBox();
+            this.TimerSample = new System.Windows.Forms.Timer(this.components);
+            this.TimerLogging = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnSample
@@ -51,6 +54,7 @@
             this.btnLog.TabIndex = 2;
             this.btnLog.Text = "Log to file";
             this.btnLog.UseVisualStyleBackColor = true;
+            this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
             // 
             // TextBox
             // 
@@ -59,6 +63,10 @@
             this.TextBox.Size = new System.Drawing.Size(385, 279);
             this.TextBox.TabIndex = 3;
             this.TextBox.Text = "";
+            // 
+            // TimerSample
+            // 
+            this.TimerSample.Tick += new System.EventHandler(this.TimerSample_Tick);
             // 
             // Form1
             // 
@@ -69,7 +77,7 @@
             this.Controls.Add(this.btnLog);
             this.Controls.Add(this.btnSample);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Assignment I - Virtual sensors";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
@@ -79,6 +87,8 @@
         private System.Windows.Forms.Button btnSample;
         private System.Windows.Forms.Button btnLog;
         private System.Windows.Forms.RichTextBox TextBox;
+        private System.Windows.Forms.Timer TimerSample;
+        private System.Windows.Forms.Timer TimerLogging;
     }
 }
 

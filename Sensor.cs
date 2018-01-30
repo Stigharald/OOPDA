@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -126,9 +125,10 @@ namespace Assignment1
 
         public double Value(double NewVal)
         {
-            Numbers.Enqueue(NewVal);
+            // filterdata base 
+            Numbers.Enqueue(NewVal);  
             Numbers.Dequeue();
-
+            // Calculate the mean of the data inside the collection
             int cnt = 0;
             double sum = 0;
             foreach (double val in Numbers)
@@ -136,7 +136,6 @@ namespace Assignment1
                 cnt++;
                 sum += val;
             }
-
             return sum / cnt;
         }
     }
