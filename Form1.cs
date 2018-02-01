@@ -37,6 +37,8 @@ namespace Assignment1
             Logging = false;
             Sampleable = true;
 
+            CheckboxLogging.Enabled = false;
+
             //initializing the tick intevall of the timers.
             TimerSample.Interval = Convert.ToInt16((Sampingtime*1000));
             TimerLogging.Interval = Convert.ToInt16((LoggingTime * 1000));
@@ -91,10 +93,12 @@ namespace Assignment1
             {
                 Logging = false;
                 TimerLogging.Enabled = false;
+                CheckboxLogging.Checked = false;
             }
             else {
                 Logging = true;
                 TimerLogging.Enabled = true;
+                CheckboxLogging.Checked = true;
             }
         }
 

@@ -34,6 +34,7 @@
             this.TextBox = new System.Windows.Forms.RichTextBox();
             this.TimerSample = new System.Windows.Forms.Timer(this.components);
             this.TimerLogging = new System.Windows.Forms.Timer(this.components);
+            this.CheckboxLogging = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnSample
@@ -48,7 +49,7 @@
             // 
             // btnLog
             // 
-            this.btnLog.Location = new System.Drawing.Point(322, 12);
+            this.btnLog.Location = new System.Drawing.Point(252, 12);
             this.btnLog.Name = "btnLog";
             this.btnLog.Size = new System.Drawing.Size(75, 23);
             this.btnLog.TabIndex = 2;
@@ -60,7 +61,7 @@
             // 
             this.TextBox.Location = new System.Drawing.Point(12, 54);
             this.TextBox.Name = "TextBox";
-            this.TextBox.Size = new System.Drawing.Size(385, 279);
+            this.TextBox.Size = new System.Drawing.Size(336, 160);
             this.TextBox.TabIndex = 3;
             this.TextBox.Text = "";
             // 
@@ -72,11 +73,21 @@
             // 
             this.TimerLogging.Tick += new System.EventHandler(this.TimerLogging_Tick);
             // 
+            // CheckboxLogging
+            // 
+            this.CheckboxLogging.AutoSize = true;
+            this.CheckboxLogging.Location = new System.Drawing.Point(333, 17);
+            this.CheckboxLogging.Name = "CheckboxLogging";
+            this.CheckboxLogging.Size = new System.Drawing.Size(15, 14);
+            this.CheckboxLogging.TabIndex = 4;
+            this.CheckboxLogging.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 345);
+            this.ClientSize = new System.Drawing.Size(360, 224);
+            this.Controls.Add(this.CheckboxLogging);
             this.Controls.Add(this.TextBox);
             this.Controls.Add(this.btnLog);
             this.Controls.Add(this.btnSample);
@@ -84,6 +95,7 @@
             this.Text = "Assignment I - Virtual sensors";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -93,6 +105,7 @@
         private System.Windows.Forms.RichTextBox TextBox;
         private System.Windows.Forms.Timer TimerSample;
         private System.Windows.Forms.Timer TimerLogging;
+        private System.Windows.Forms.CheckBox CheckboxLogging;
     }
 }
 
