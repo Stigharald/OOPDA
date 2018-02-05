@@ -35,13 +35,19 @@
             this.TimerSample = new System.Windows.Forms.Timer(this.components);
             this.TimerLogging = new System.Windows.Forms.Timer(this.components);
             this.CheckboxLogging = new System.Windows.Forms.CheckBox();
+            this.TimerGui = new System.Windows.Forms.Timer(this.components);
+            this.lblSampletimeLeft = new System.Windows.Forms.Label();
+            this.lblLoggingTime = new System.Windows.Forms.Label();
+            this.checkBoxAutosample = new System.Windows.Forms.CheckBox();
+            this.lblSamplingLeftCaption = new System.Windows.Forms.Label();
+            this.lblLoggingLeftCaption = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSample
             // 
             this.btnSample.Location = new System.Drawing.Point(12, 12);
             this.btnSample.Name = "btnSample";
-            this.btnSample.Size = new System.Drawing.Size(75, 23);
+            this.btnSample.Size = new System.Drawing.Size(75, 32);
             this.btnSample.TabIndex = 1;
             this.btnSample.Text = "Sample";
             this.btnSample.UseVisualStyleBackColor = true;
@@ -51,7 +57,7 @@
             // 
             this.btnLog.Location = new System.Drawing.Point(252, 12);
             this.btnLog.Name = "btnLog";
-            this.btnLog.Size = new System.Drawing.Size(75, 23);
+            this.btnLog.Size = new System.Drawing.Size(75, 32);
             this.btnLog.TabIndex = 2;
             this.btnLog.Text = "Log to file";
             this.btnLog.UseVisualStyleBackColor = true;
@@ -59,9 +65,9 @@
             // 
             // TextBox
             // 
-            this.TextBox.Location = new System.Drawing.Point(12, 54);
+            this.TextBox.Location = new System.Drawing.Point(12, 82);
             this.TextBox.Name = "TextBox";
-            this.TextBox.Size = new System.Drawing.Size(336, 160);
+            this.TextBox.Size = new System.Drawing.Size(336, 144);
             this.TextBox.TabIndex = 3;
             this.TextBox.Text = "";
             // 
@@ -76,17 +82,68 @@
             // CheckboxLogging
             // 
             this.CheckboxLogging.AutoSize = true;
-            this.CheckboxLogging.Location = new System.Drawing.Point(333, 17);
+            this.CheckboxLogging.Location = new System.Drawing.Point(333, 22);
             this.CheckboxLogging.Name = "CheckboxLogging";
             this.CheckboxLogging.Size = new System.Drawing.Size(15, 14);
             this.CheckboxLogging.TabIndex = 4;
             this.CheckboxLogging.UseVisualStyleBackColor = true;
             // 
+            // TimerGui
+            // 
+            this.TimerGui.Tick += new System.EventHandler(this.TimerGui_Tick);
+            // 
+            // lblSampletimeLeft
+            // 
+            this.lblSampletimeLeft.AutoSize = true;
+            this.lblSampletimeLeft.Location = new System.Drawing.Point(94, 26);
+            this.lblSampletimeLeft.Name = "lblSampletimeLeft";
+            this.lblSampletimeLeft.Size = new System.Drawing.Size(0, 13);
+            this.lblSampletimeLeft.TabIndex = 5;
+            // 
+            // lblLoggingTime
+            // 
+            this.lblLoggingTime.AutoSize = true;
+            this.lblLoggingTime.Location = new System.Drawing.Point(211, 26);
+            this.lblLoggingTime.Name = "lblLoggingTime";
+            this.lblLoggingTime.Size = new System.Drawing.Size(0, 13);
+            this.lblLoggingTime.TabIndex = 6;
+            // 
+            // checkBoxAutosample
+            // 
+            this.checkBoxAutosample.AutoSize = true;
+            this.checkBoxAutosample.Location = new System.Drawing.Point(12, 51);
+            this.checkBoxAutosample.Name = "checkBoxAutosample";
+            this.checkBoxAutosample.Size = new System.Drawing.Size(81, 17);
+            this.checkBoxAutosample.TabIndex = 7;
+            this.checkBoxAutosample.Text = "Autosample";
+            this.checkBoxAutosample.UseVisualStyleBackColor = true;
+            // 
+            // lblSamplingLeftCaption
+            // 
+            this.lblSamplingLeftCaption.AutoSize = true;
+            this.lblSamplingLeftCaption.Location = new System.Drawing.Point(94, 9);
+            this.lblSamplingLeftCaption.Name = "lblSamplingLeftCaption";
+            this.lblSamplingLeftCaption.Size = new System.Drawing.Size(0, 13);
+            this.lblSamplingLeftCaption.TabIndex = 8;
+            // 
+            // lblLoggingLeftCaption
+            // 
+            this.lblLoggingLeftCaption.AutoSize = true;
+            this.lblLoggingLeftCaption.Location = new System.Drawing.Point(195, 9);
+            this.lblLoggingLeftCaption.Name = "lblLoggingLeftCaption";
+            this.lblLoggingLeftCaption.Size = new System.Drawing.Size(0, 13);
+            this.lblLoggingLeftCaption.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 224);
+            this.ClientSize = new System.Drawing.Size(360, 238);
+            this.Controls.Add(this.lblLoggingLeftCaption);
+            this.Controls.Add(this.lblSamplingLeftCaption);
+            this.Controls.Add(this.checkBoxAutosample);
+            this.Controls.Add(this.lblLoggingTime);
+            this.Controls.Add(this.lblSampletimeLeft);
             this.Controls.Add(this.CheckboxLogging);
             this.Controls.Add(this.TextBox);
             this.Controls.Add(this.btnLog);
@@ -106,6 +163,12 @@
         private System.Windows.Forms.Timer TimerSample;
         private System.Windows.Forms.Timer TimerLogging;
         private System.Windows.Forms.CheckBox CheckboxLogging;
+        private System.Windows.Forms.Timer TimerGui;
+        private System.Windows.Forms.Label lblSampletimeLeft;
+        private System.Windows.Forms.Label lblLoggingTime;
+        private System.Windows.Forms.CheckBox checkBoxAutosample;
+        private System.Windows.Forms.Label lblSamplingLeftCaption;
+        private System.Windows.Forms.Label lblLoggingLeftCaption;
     }
 }
 

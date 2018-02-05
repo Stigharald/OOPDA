@@ -23,8 +23,10 @@ namespace Assignment1
         double LoggingTime = 8.0F; //sec
         double Sampingtime = 2.8F; //sec
 
+        double SampleTimeLeft = 0.0F; //Sec
+        double LoggingTimeLeft = 0.0F; //sec
 
-        // Methods in Form
+        // Methods in Form  
 
 
         bool Logging;
@@ -46,6 +48,7 @@ namespace Assignment1
             //instansier loggefil objekt
             Logfile = new CSVfile("LoggeFil", Sensors);  //this makes and loggs and makes a header for the loggfile.
 
+            TimerGui.Enabled = true;
         }
 
         private void initSensors()
@@ -65,6 +68,12 @@ namespace Assignment1
 
         private void btnSample_Click(object sender, EventArgs e)
         {
+            SampleSensors();
+
+        }
+
+        private void SampleSensors()
+        {
             if (Sampleable)
             {
                 string Data = "";
@@ -76,6 +85,7 @@ namespace Assignment1
 
                 Sampleable = false;
                 TimerSample.Enabled = true;
+                SampleTimeLeft = Sampingtime-0.1F;
                 //TimerLogging.Enabled = true;
                 btnSample.Hide();
             }
@@ -107,7 +117,10 @@ namespace Assignment1
             Sampleable = true;
             TimerSample.Enabled = false;
             btnSample.Visible = true;
-           
+            if (checkBoxAutosample.Checked)
+            {
+                SampleSensors();
+            }
         }
 
         private void TimerLogging_Tick(object sender, EventArgs e)
@@ -115,7 +128,37 @@ namespace Assignment1
             if (Logging)
             {
                 Logfile.WriteToCSV(Sensors);
+                LoggingTimeLeft = LoggingTime;
             }
+        }
+
+        private void TimerGui_Tick(object sender, EventArgs e)
+        {
+            if (SampleTimeLeft > 0.0F)
+            {
+                SampleTimeLeft -= 0.1F;
+                lblSampletimeLeft.Text = Convert.ToString(string.Format("{0:N2}", SampleTimeLeft));
+                lblLoggingLeftCaption.Text = "Sampling in:";
+            }
+            else
+            {
+                lblSampletimeLeft.Text = "";
+                lblLoggingLeftCaption.Text = "";
+            }
+
+            if (LoggingTimeLeft > 0.0F)
+            {
+                LoggingTimeLeft -= 0.1F;
+                lblLoggingTime.Text = Convert.ToString(string.Format("{0:N2}", LoggingTimeLeft));
+                lblLoggingLeftCaption.Text = "Logging in";
+            }
+            else
+            {
+                lblLoggingTime.Text = "";
+                lblLoggingLeftCaption.Text = "";
+            }
+
+
         }
 
 
