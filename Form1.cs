@@ -104,11 +104,13 @@ namespace Assignment1
                 Logging = false;
                 TimerLogging.Enabled = false;
                 CheckboxLogging.Checked = false;
+                LoggingTimeLeft = 0;
             }
             else {
                 Logging = true;
                 TimerLogging.Enabled = true;
                 CheckboxLogging.Checked = true;
+                LoggingTimeLeft = LoggingTime;
             }
         }
 
@@ -138,12 +140,12 @@ namespace Assignment1
             {
                 SampleTimeLeft -= 0.1F;
                 lblSampletimeLeft.Text = Convert.ToString(string.Format("{0:N2}", SampleTimeLeft));
-                lblLoggingLeftCaption.Text = "Sampling in:";
+                lblSamplingLeftCaption.Text = "Sampling in:";
             }
             else
             {
                 lblSampletimeLeft.Text = "";
-                lblLoggingLeftCaption.Text = "";
+                lblSamplingLeftCaption.Text = "";
             }
 
             if (LoggingTimeLeft > 0.0F)
@@ -161,12 +163,10 @@ namespace Assignment1
 
         }
 
-
-        // Add Timer for min time between samples
-
-
-        // Add timer for loggint to file.
-
-
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is a help message box, supposed to help you! This application simulates sensors and values, and can write the sensorvalues to a logfile running on the same directory as the application. Sensors can be manually sampled or automatically and it counts down when next sample can be taken and written to file",
+                        "Help: Info about application - Assignment I - Virtual Sensors", System.Windows.Forms.MessageBoxButtons.OK);
+        }
     }
 }

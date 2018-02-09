@@ -41,6 +41,7 @@
             this.checkBoxAutosample = new System.Windows.Forms.CheckBox();
             this.lblSamplingLeftCaption = new System.Windows.Forms.Label();
             this.lblLoggingLeftCaption = new System.Windows.Forms.Label();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSample
@@ -121,7 +122,7 @@
             // lblSamplingLeftCaption
             // 
             this.lblSamplingLeftCaption.AutoSize = true;
-            this.lblSamplingLeftCaption.Location = new System.Drawing.Point(94, 9);
+            this.lblSamplingLeftCaption.Location = new System.Drawing.Point(82, 9);
             this.lblSamplingLeftCaption.Name = "lblSamplingLeftCaption";
             this.lblSamplingLeftCaption.Size = new System.Drawing.Size(0, 13);
             this.lblSamplingLeftCaption.TabIndex = 8;
@@ -134,11 +135,23 @@
             this.lblLoggingLeftCaption.Size = new System.Drawing.Size(0, 13);
             this.lblLoggingLeftCaption.TabIndex = 9;
             // 
+            // btnHelp
+            // 
+            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.Location = new System.Drawing.Point(12, 236);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(336, 91);
+            this.btnHelp.TabIndex = 10;
+            this.btnHelp.Text = "HELP";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 238);
+            this.ClientSize = new System.Drawing.Size(360, 339);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblLoggingLeftCaption);
             this.Controls.Add(this.lblSamplingLeftCaption);
             this.Controls.Add(this.checkBoxAutosample);
@@ -169,6 +182,7 @@
         private System.Windows.Forms.CheckBox checkBoxAutosample;
         private System.Windows.Forms.Label lblSamplingLeftCaption;
         private System.Windows.Forms.Label lblLoggingLeftCaption;
+        private System.Windows.Forms.Button btnHelp;
     }
 }
 
