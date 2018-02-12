@@ -32,6 +32,8 @@ namespace Assignment1
         bool Logging;
         bool Sampleable;
 
+        string filename = Convert.ToString(DateTime.Now) + "_Logging";
+
         public Form1()
         {
             InitializeComponent();
@@ -40,13 +42,16 @@ namespace Assignment1
             Sampleable = true;
 
             CheckboxLogging.Enabled = false;
+            
 
             //initializing the tick intevall of the timers.
             TimerSample.Interval = Convert.ToInt16((Sampingtime*1000));
             TimerLogging.Interval = Convert.ToInt16((LoggingTime * 1000));
 
             //instansier loggefil objekt
-            Logfile = new CSVfile("LoggeFil", Sensors);  //this makes and loggs and makes a header for the loggfile.
+            Logfile = new CSVfile(filename, Sensors);  //this makes and loggs and makes a header for the loggfile.
+
+            lblLoggingFileName.Text = filename;
 
             TimerGui.Enabled = true;
         }
@@ -159,7 +164,7 @@ namespace Assignment1
                 lblLoggingTime.Text = "";
                 lblLoggingLeftCaption.Text = "";
             }
-
+            lblLoggingCnt.Text = Convert.ToString(Logfile.cnt);
 
         }
 

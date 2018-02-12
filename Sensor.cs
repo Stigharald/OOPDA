@@ -122,7 +122,6 @@ namespace Assignment1
                 Numbers.Enqueue(initVal); 
             }
         }
-
         public double Value(double NewVal)
         {
             // filterdata base 

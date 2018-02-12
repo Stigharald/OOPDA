@@ -42,6 +42,8 @@
             this.lblSamplingLeftCaption = new System.Windows.Forms.Label();
             this.lblLoggingLeftCaption = new System.Windows.Forms.Label();
             this.btnHelp = new System.Windows.Forms.Button();
+            this.lblLoggingFileName = new System.Windows.Forms.Label();
+            this.lblLoggingCnt = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSample
@@ -146,11 +148,29 @@
             this.btnHelp.UseVisualStyleBackColor = true;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
+            // lblLoggingFileName
+            // 
+            this.lblLoggingFileName.AutoSize = true;
+            this.lblLoggingFileName.Location = new System.Drawing.Point(172, 51);
+            this.lblLoggingFileName.Name = "lblLoggingFileName";
+            this.lblLoggingFileName.Size = new System.Drawing.Size(0, 13);
+            this.lblLoggingFileName.TabIndex = 11;
+            // 
+            // lblLoggingCnt
+            // 
+            this.lblLoggingCnt.AutoSize = true;
+            this.lblLoggingCnt.Location = new System.Drawing.Point(336, 51);
+            this.lblLoggingCnt.Name = "lblLoggingCnt";
+            this.lblLoggingCnt.Size = new System.Drawing.Size(0, 13);
+            this.lblLoggingCnt.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(360, 339);
+            this.Controls.Add(this.lblLoggingCnt);
+            this.Controls.Add(this.lblLoggingFileName);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblLoggingLeftCaption);
             this.Controls.Add(this.lblSamplingLeftCaption);
@@ -183,6 +203,8 @@
         private System.Windows.Forms.Label lblSamplingLeftCaption;
         private System.Windows.Forms.Label lblLoggingLeftCaption;
         private System.Windows.Forms.Button btnHelp;
+        private System.Windows.Forms.Label lblLoggingFileName;
+        private System.Windows.Forms.Label lblLoggingCnt;
     }
 }
 

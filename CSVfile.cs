@@ -12,9 +12,11 @@ namespace Assignment1
         string direcory;
         string filename;
         string path;
+        public int cnt;
         public CSVfile(string fileNameNNforextention, List<Sensor> Sensors, string filepath = @"C:\")
         {
             //direcory = filepath;  if application running as admin or somethingsomth? 
+            cnt = 0;
             direcory = Directory.GetCurrentDirectory();
             filename = fileNameNNforextention;
             path = direcory + filename + ".csv";
@@ -62,7 +64,7 @@ namespace Assignment1
 
             fs.Flush();
             fs.Close();
-
+            cnt++;  // increment logging counter.
         }
 
     }
