@@ -29,7 +29,6 @@ namespace Assignment1
                 Header.Append(S.GetSensId());
                 Header.Append(';');  // colon since in colon separated values
             }
-
             FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write);
             if (fs.CanWrite)
             {
